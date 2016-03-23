@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DBTransaction","Write transaction. Batches a sequence of put/delete operations for efficiency."],["Database","Key-Value database."],["DatabaseConfig","Database configuration"],["DatabaseIterator","Database iterator"]]});

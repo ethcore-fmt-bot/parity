@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AccountDetails","Details of account"],["Miner","Keeps track of transactions using priority queue and holds currently mined block."],["MinerStatus","Mining status"],["TransactionQueue","TransactionQueue implementation"]],"trait":[["MinerService","Miner client API"]]});

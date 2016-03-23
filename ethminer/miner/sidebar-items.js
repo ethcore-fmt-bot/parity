@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Miner","Keeps track of transactions using priority queue and holds currently mined block."]]});

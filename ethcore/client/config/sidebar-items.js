@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BlockChainConfig","Blockchain configuration."],["ClientConfig","Client configuration. Includes configs for all sub-systems."]]});

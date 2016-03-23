@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["directory","Keys Directory"],["store","Secret Store"]]});

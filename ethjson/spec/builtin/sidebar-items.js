@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Pricing","Pricing variants."]],"struct":[["Builtin","Spec builtin."],["Linear","Linear pricing."]]});

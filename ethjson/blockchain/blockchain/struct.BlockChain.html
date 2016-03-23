@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `BlockChain` struct in crate `ethjson`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, BlockChain">
+
+    <title>ethjson::blockchain::blockchain::BlockChain - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>ethjson</a>::<wbr><a href='../index.html'>blockchain</a>::<wbr><a href='index.html'>blockchain</a></p><script>window.sidebarCurrent = {name: 'BlockChain', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>ethjson</a>::<wbr><a href='../index.html'>blockchain</a>::<wbr><a href='index.html'>blockchain</a>::<wbr><a class='struct' href=''>BlockChain</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-899' class='srclink' href='../../../src/ethjson///home/travis/build/ethcore/parity/target/debug/build/ethjson-7d7a5c0ec246a817/out/lib.rs.html#785-798' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct BlockChain {
+    pub genesis_block: <a class='struct' href='../../../ethjson/blockchain/header/struct.Header.html' title='ethjson::blockchain::header::Header'>Header</a>,
+    pub genesis_rlp: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/bytes/struct.Bytes.html' title='ethjson::bytes::Bytes'>Bytes</a>&gt;,
+    pub blocks: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../ethjson/blockchain/block/struct.Block.html' title='ethjson::blockchain::block::Block'>Block</a>&gt;,
+    pub post_state: <a class='struct' href='../../../ethjson/blockchain/state/struct.State.html' title='ethjson::blockchain::state::State'>State</a>,
+    pub pre_state: <a class='struct' href='../../../ethjson/blockchain/state/struct.State.html' title='ethjson::blockchain::state::State'>State</a>,
+    pub best_block: <a class='struct' href='../../../ethjson/hash/struct.H256.html' title='ethjson::hash::H256'>H256</a>,
+}</pre><div class='docblock'><p>Blockchain deserialization.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.genesis_block'><code>genesis_block</code></td><td><div class='docblock'><p>Genesis block header.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.genesis_rlp'><code>genesis_rlp</code></td><td><div class='docblock'><p>Genesis block rlp.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.blocks'><code>blocks</code></td><td><div class='docblock'><p>Blocks.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.post_state'><code>post_state</code></td><td><div class='docblock'><p>Post state.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.pre_state'><code>pre_state</code></td><td><div class='docblock'><p>Pre state.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.best_block'><code>best_block</code></td><td><div class='docblock'><p>Hash of best block.</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../../ethjson/blockchain/blockchain/struct.BlockChain.html' title='ethjson::blockchain::blockchain::BlockChain'>BlockChain</a></code></h3><div class='impl-items'><h4 id='method.blocks_rlp' class='method'><code>fn <a href='#method.blocks_rlp' class='fnname'>blocks_rlp</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;&gt;</code></h4>
+<div class='docblock'><p>Returns blocks rlp.</p>
+</div><h4 id='method.genesis' class='method'><code>fn <a href='#method.genesis' class='fnname'>genesis</a>(&amp;self) -&gt; <a class='struct' href='../../../ethjson/spec/genesis/struct.Genesis.html' title='ethjson::spec::genesis::Genesis'>Genesis</a></code></h4>
+<div class='docblock'><p>Returns spec compatible genesis struct.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://serde-rs.github.io/serde/serde/serde/de/trait.Deserialize.html' title='serde::de::Deserialize'>Deserialize</a> for <a class='struct' href='../../../ethjson/blockchain/blockchain/struct.BlockChain.html' title='ethjson::blockchain::blockchain::BlockChain'>BlockChain</a></code></h3><div class='impl-items'><h4 id='method.deserialize' class='method'><code>fn <a href='https://serde-rs.github.io/serde/serde/serde/de/trait.Deserialize.html#method.deserialize' class='fnname'>deserialize</a>&lt;__D&gt;(deserializer: &amp;mut __D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../../ethjson/blockchain/blockchain/struct.BlockChain.html' title='ethjson::blockchain::blockchain::BlockChain'>BlockChain</a>, __D::Error&gt; <span class='where'>where __D: <a class='trait' href='https://serde-rs.github.io/serde/serde/serde/de/trait.Deserializer.html' title='serde::de::Deserializer'>Deserializer</a></span></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../../ethjson/blockchain/blockchain/struct.BlockChain.html' title='ethjson::blockchain::blockchain::BlockChain'>BlockChain</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../ethjson/blockchain/blockchain/struct.BlockChain.html' title='ethjson::blockchain::blockchain::BlockChain'>BlockChain</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../ethjson/blockchain/blockchain/struct.BlockChain.html' title='ethjson::blockchain::blockchain::BlockChain'>BlockChain</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../ethjson/blockchain/blockchain/struct.BlockChain.html' title='ethjson::blockchain::blockchain::BlockChain'>BlockChain</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "ethjson";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Config","TestSyncProvider config."],["TestAccount","Account mock."],["TestAccountProvider","Test account provider."],["TestExternalMiner","Test ExternalMinerService;"],["TestMinerService","Test miner service."],["TestSyncProvider","Test sync provider."]]});

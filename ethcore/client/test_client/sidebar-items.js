@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["EachBlockWith","Used for generating test client blocks."]],"struct":[["TestBlockChainClient","Test client."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CacheSize","Represents blockchain's in-memory cache size in bytes."]]});

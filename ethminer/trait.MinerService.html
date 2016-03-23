@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `MinerService` trait in crate `ethminer`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, MinerService">
+
+    <title>ethminer::MinerService - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>ethminer</a></p><script>window.sidebarCurrent = {name: 'MinerService', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>ethminer</a>::<wbr><a class='trait' href=''>MinerService</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-449' class='srclink' href='../src/ethminer/lib.rs.html#75-108' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait MinerService: <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Send.html' title='core::marker::Send'>Send</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html' title='core::marker::Sync'>Sync</a> {
+    fn <a href='#tymethod.status' class='fnname'>status</a>(&amp;self) -&gt; <a class='struct' href='../ethminer/struct.MinerStatus.html' title='ethminer::MinerStatus'>MinerStatus</a>;
+    fn <a href='#tymethod.import_transactions' class='fnname'>import_transactions</a>&lt;T&gt;(&amp;self, transactions: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../ethcore/transaction/struct.SignedTransaction.html' title='ethcore::transaction::SignedTransaction'>SignedTransaction</a>&gt;, fetch_account: T) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../ethcore/error/enum.Error.html' title='ethcore::error::Error'>Error</a>&gt;&gt; <span class='where'>where T: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(&amp;Address) -&gt; <a class='struct' href='../ethminer/struct.AccountDetails.html' title='ethminer::AccountDetails'>AccountDetails</a></span>;
+    fn <a href='#tymethod.pending_transactions_hashes' class='fnname'>pending_transactions_hashes</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;H256&gt;;
+    fn <a href='#tymethod.clear_and_reset' class='fnname'>clear_and_reset</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>);
+    fn <a href='#tymethod.chain_new_blocks' class='fnname'>chain_new_blocks</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>, imported: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, invalid: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, enacted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, retracted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>);
+    fn <a href='#tymethod.update_sealing' class='fnname'>update_sealing</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>);
+    fn <a href='#tymethod.sealing_block' class='fnname'>sealing_block</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/mutex/struct.Mutex.html' title='std::sync::mutex::Mutex'>Mutex</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../ethcore/block/struct.ClosedBlock.html' title='ethcore::block::ClosedBlock'>ClosedBlock</a>&gt;&gt;;
+    fn <a href='#tymethod.submit_seal' class='fnname'>submit_seal</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>, pow_hash: H256, seal: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;Bytes&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../ethcore/error/enum.Error.html' title='ethcore::error::Error'>Error</a>&gt;;
+
+    fn <a href='#method.author' class='fnname'>author</a>(&amp;self) -&gt; Address { ... }
+    fn <a href='#method.extra_data' class='fnname'>extra_data</a>(&amp;self) -&gt; Bytes { ... }
+}</pre><div class='docblock'><p>Miner client API</p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.status' class='method stab '><code>fn <a href='#tymethod.status' class='fnname'>status</a>(&amp;self) -&gt; <a class='struct' href='../ethminer/struct.MinerStatus.html' title='ethminer::MinerStatus'>MinerStatus</a></code></h3><div class='docblock'><p>Returns miner&#39;s status.</p>
+</div><h3 id='tymethod.import_transactions' class='method stab '><code>fn <a href='#tymethod.import_transactions' class='fnname'>import_transactions</a>&lt;T&gt;(&amp;self, transactions: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../ethcore/transaction/struct.SignedTransaction.html' title='ethcore::transaction::SignedTransaction'>SignedTransaction</a>&gt;, fetch_account: T) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../ethcore/error/enum.Error.html' title='ethcore::error::Error'>Error</a>&gt;&gt; <span class='where'>where T: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Fn.html' title='core::ops::Fn'>Fn</a>(&amp;Address) -&gt; <a class='struct' href='../ethminer/struct.AccountDetails.html' title='ethminer::AccountDetails'>AccountDetails</a></span></code></h3><div class='docblock'><p>Imports transactions to transaction queue.</p>
+</div><h3 id='tymethod.pending_transactions_hashes' class='method stab '><code>fn <a href='#tymethod.pending_transactions_hashes' class='fnname'>pending_transactions_hashes</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;H256&gt;</code></h3><div class='docblock'><p>Returns hashes of transactions currently in pending</p>
+</div><h3 id='tymethod.clear_and_reset' class='method stab '><code>fn <a href='#tymethod.clear_and_reset' class='fnname'>clear_and_reset</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>)</code></h3><div class='docblock'><p>Removes all transactions from the queue and restart mining operation.</p>
+</div><h3 id='tymethod.chain_new_blocks' class='method stab '><code>fn <a href='#tymethod.chain_new_blocks' class='fnname'>chain_new_blocks</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>, imported: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, invalid: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, enacted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>, retracted: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a>H256<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>)</code></h3><div class='docblock'><p>Called when blocks are imported to chain, updates transactions queue.</p>
+</div><h3 id='tymethod.update_sealing' class='method stab '><code>fn <a href='#tymethod.update_sealing' class='fnname'>update_sealing</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>)</code></h3><div class='docblock'><p>New chain head event. Restart mining operation.</p>
+</div><h3 id='tymethod.sealing_block' class='method stab '><code>fn <a href='#tymethod.sealing_block' class='fnname'>sealing_block</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>) -&gt; &amp;<a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/mutex/struct.Mutex.html' title='std::sync::mutex::Mutex'>Mutex</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../ethcore/block/struct.ClosedBlock.html' title='ethcore::block::ClosedBlock'>ClosedBlock</a>&gt;&gt;</code></h3><div class='docblock'><p>Grab the <code>ClosedBlock</code> that we want to be sealed. Comes as a mutex that you have to lock.</p>
+</div><h3 id='tymethod.submit_seal' class='method stab '><code>fn <a href='#tymethod.submit_seal' class='fnname'>submit_seal</a>(&amp;self, chain: &amp;<a class='trait' href='../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a>, pow_hash: H256, seal: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;Bytes&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../ethcore/error/enum.Error.html' title='ethcore::error::Error'>Error</a>&gt;</code></h3><div class='docblock'><p>Submit <code>seal</code> as a valid solution for the header of <code>pow_hash</code>.
+Will check the seal, but not actually insert the block into the chain.</p>
+</div></div>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='method.author' class='method stab '><code>fn <a href='#method.author' class='fnname'>author</a>(&amp;self) -&gt; Address</code></h3><div class='docblock'><p>Get the author that we will seal blocks as.</p>
+</div><h3 id='method.extra_data' class='method stab '><code>fn <a href='#method.extra_data' class='fnname'>extra_data</a>(&amp;self) -&gt; Bytes</code></h3><div class='docblock'><p>Get the extra_data that we will seal blocks wuth.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl <a class='trait' href='../ethminer/trait.MinerService.html' title='ethminer::MinerService'>MinerService</a> for <a class='struct' href='../ethminer/struct.Miner.html' title='ethminer::Miner'>Miner</a></code></li>
+</ul><script type="text/javascript" async
+                              src="../implementors/ethminer/trait.MinerService.js">
+                      </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "ethminer";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

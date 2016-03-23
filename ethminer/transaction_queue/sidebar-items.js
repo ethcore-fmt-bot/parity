@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AccountDetails","Details of account"],["TransactionQueue","TransactionQueue implementation"]]});

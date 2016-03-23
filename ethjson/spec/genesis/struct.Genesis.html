@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Genesis` struct in crate `ethjson`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Genesis">
+
+    <title>ethjson::spec::genesis::Genesis - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>ethjson</a>::<wbr><a href='../index.html'>spec</a>::<wbr><a href='index.html'>genesis</a></p><script>window.sidebarCurrent = {name: 'Genesis', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>ethjson</a>::<wbr><a href='../index.html'>spec</a>::<wbr><a href='index.html'>genesis</a>::<wbr><a class='struct' href=''>Genesis</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-2273' class='srclink' href='../../../src/ethjson///home/travis/build/ethcore/parity/target/debug/build/ethjson-7d7a5c0ec246a817/out/lib.rs.html#3081-3110' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Genesis {
+    pub nonce: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/hash/struct.H64.html' title='ethjson::hash::H64'>H64</a>&gt;,
+    pub mix_hash: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/hash/struct.H256.html' title='ethjson::hash::H256'>H256</a>&gt;,
+    pub seal_fields: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;,
+    pub seal_rlp: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/bytes/struct.Bytes.html' title='ethjson::bytes::Bytes'>Bytes</a>&gt;,
+    pub difficulty: <a class='struct' href='../../../ethjson/uint/struct.Uint.html' title='ethjson::uint::Uint'>Uint</a>,
+    pub author: <a class='struct' href='../../../ethjson/hash/struct.Address.html' title='ethjson::hash::Address'>Address</a>,
+    pub timestamp: <a class='struct' href='../../../ethjson/uint/struct.Uint.html' title='ethjson::uint::Uint'>Uint</a>,
+    pub parent_hash: <a class='struct' href='../../../ethjson/hash/struct.H256.html' title='ethjson::hash::H256'>H256</a>,
+    pub gas_limit: <a class='struct' href='../../../ethjson/uint/struct.Uint.html' title='ethjson::uint::Uint'>Uint</a>,
+    pub transactions_root: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/hash/struct.H256.html' title='ethjson::hash::H256'>H256</a>&gt;,
+    pub receipts_root: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/hash/struct.H256.html' title='ethjson::hash::H256'>H256</a>&gt;,
+    pub state_root: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/hash/struct.H256.html' title='ethjson::hash::H256'>H256</a>&gt;,
+    pub gas_used: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/uint/struct.Uint.html' title='ethjson::uint::Uint'>Uint</a>&gt;,
+    pub extra_data: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../../ethjson/bytes/struct.Bytes.html' title='ethjson::bytes::Bytes'>Bytes</a>&gt;,
+}</pre><div class='docblock'><p>Spec genesis.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.nonce'><code>nonce</code></td><td><div class='docblock'><p>Seal nonce.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.mix_hash'><code>mix_hash</code></td><td><div class='docblock'><p>Seal mix hash.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.seal_fields'><code>seal_fields</code></td><td><div class='docblock'><p>Number of seal fields.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.seal_rlp'><code>seal_rlp</code></td><td><div class='docblock'><p>Seal rlp.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.difficulty'><code>difficulty</code></td><td><div class='docblock'><p>Difficulty.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.author'><code>author</code></td><td><div class='docblock'><p>Block author.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.timestamp'><code>timestamp</code></td><td><div class='docblock'><p>Block timestamp.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.parent_hash'><code>parent_hash</code></td><td><div class='docblock'><p>Parent hash.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.gas_limit'><code>gas_limit</code></td><td><div class='docblock'><p>Gas limit.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.transactions_root'><code>transactions_root</code></td><td><div class='docblock'><p>Transactions root.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.receipts_root'><code>receipts_root</code></td><td><div class='docblock'><p>Receipts root.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.state_root'><code>state_root</code></td><td><div class='docblock'><p>State root.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.gas_used'><code>gas_used</code></td><td><div class='docblock'><p>Gas used.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.extra_data'><code>extra_data</code></td><td><div class='docblock'><p>Extra data.</p>
+</div></td></tr></table><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://serde-rs.github.io/serde/serde/serde/de/trait.Deserialize.html' title='serde::de::Deserialize'>Deserialize</a> for <a class='struct' href='../../../ethjson/spec/genesis/struct.Genesis.html' title='ethjson::spec::genesis::Genesis'>Genesis</a></code></h3><div class='impl-items'><h4 id='method.deserialize' class='method'><code>fn <a href='https://serde-rs.github.io/serde/serde/serde/de/trait.Deserialize.html#method.deserialize' class='fnname'>deserialize</a>&lt;__D&gt;(deserializer: &amp;mut __D) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../../ethjson/spec/genesis/struct.Genesis.html' title='ethjson::spec::genesis::Genesis'>Genesis</a>, __D::Error&gt; <span class='where'>where __D: <a class='trait' href='https://serde-rs.github.io/serde/serde/serde/de/trait.Deserializer.html' title='serde::de::Deserializer'>Deserializer</a></span></code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../../../ethjson/spec/genesis/struct.Genesis.html' title='ethjson::spec::genesis::Genesis'>Genesis</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../ethjson/spec/genesis/struct.Genesis.html' title='ethjson::spec::genesis::Genesis'>Genesis</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../../../ethjson/spec/genesis/struct.Genesis.html' title='ethjson::spec::genesis::Genesis'>Genesis</a>) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='struct' href='../../../ethjson/spec/genesis/struct.Genesis.html' title='ethjson::spec::genesis::Genesis'>Genesis</a></code></h3><div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#method.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "ethjson";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

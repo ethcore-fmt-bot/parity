@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["LocalizedReceipt","Receipt with additional info."],["Receipt","Information describing execution of a transaction."]]});

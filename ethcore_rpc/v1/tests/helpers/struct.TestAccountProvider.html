@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TestAccountProvider` struct in crate `ethcore_rpc`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TestAccountProvider">
+
+    <title>ethcore_rpc::v1::tests::helpers::TestAccountProvider - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../../index.html'>ethcore_rpc</a>::<wbr><a href='../../index.html'>v1</a>::<wbr><a href='../index.html'>tests</a>::<wbr><a href='index.html'>helpers</a></p><script>window.sidebarCurrent = {name: 'TestAccountProvider', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../../index.html'>ethcore_rpc</a>::<wbr><a href='../../index.html'>v1</a>::<wbr><a href='../index.html'>tests</a>::<wbr><a href='index.html'>helpers</a>::<wbr><a class='struct' href=''>TestAccountProvider</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-2127' class='srclink' href='../../../../src/ethcore_rpc/v1/tests/helpers/account_provider.rs.html#46-50' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TestAccountProvider {
+    pub adds: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>&gt;&gt;,
+    // some fields omitted
+}</pre><div class='docblock'><p>Test account provider.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.adds'><code>adds</code></td><td><div class='docblock'><p>Added accounts passwords.</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../../../ethcore_rpc/v1/tests/helpers/struct.TestAccountProvider.html' title='ethcore_rpc::v1::tests::helpers::TestAccountProvider'>TestAccountProvider</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>(accounts: <a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='struct' href='../../../../ethcore_util/hash/struct.Address.html' title='ethcore_util::hash::Address'>Address</a>, <a class='struct' href='../../../../ethcore_rpc/v1/tests/helpers/struct.TestAccount.html' title='ethcore_rpc::v1::tests::helpers::TestAccount'>TestAccount</a>&gt;) -&gt; Self</code></h4>
+<div class='docblock'><p>Basic constructor.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='../../../../ethcore_util/keys/store/trait.AccountProvider.html' title='ethcore_util::keys::store::AccountProvider'>AccountProvider</a> for <a class='struct' href='../../../../ethcore_rpc/v1/tests/helpers/struct.TestAccountProvider.html' title='ethcore_rpc::v1::tests::helpers::TestAccountProvider'>TestAccountProvider</a></code></h3><div class='impl-items'><h4 id='method.accounts' class='method'><code>fn <a href='../../../../ethcore_util/keys/store/trait.AccountProvider.html#method.accounts' class='fnname'>accounts</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../../../ethcore_util/hash/struct.Address.html' title='ethcore_util::hash::Address'>Address</a>&gt;, <a class='struct' href='https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html' title='std::io::error::Error'>Error</a>&gt;</code></h4>
+<h4 id='method.unlock_account' class='method'><code>fn <a href='../../../../ethcore_util/keys/store/trait.AccountProvider.html#method.unlock_account' class='fnname'>unlock_account</a>(&amp;self, account: &amp;<a class='struct' href='../../../../ethcore_util/hash/struct.Address.html' title='ethcore_util::hash::Address'>Address</a>, pass: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, <a class='enum' href='../../../../ethcore_util/keys/store/enum.EncryptedHashMapError.html' title='ethcore_util::keys::store::EncryptedHashMapError'>EncryptedHashMapError</a>&gt;</code></h4>
+<h4 id='method.new_account' class='method'><code>fn <a href='../../../../ethcore_util/keys/store/trait.AccountProvider.html#method.new_account' class='fnname'>new_account</a>(&amp;self, pass: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../../../ethcore_util/hash/struct.Address.html' title='ethcore_util::hash::Address'>Address</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html' title='std::io::error::Error'>Error</a>&gt;</code></h4>
+<h4 id='method.account_secret' class='method'><code>fn <a href='../../../../ethcore_util/keys/store/trait.AccountProvider.html#method.account_secret' class='fnname'>account_secret</a>(&amp;self, _account: &amp;<a class='struct' href='../../../../ethcore_util/hash/struct.Address.html' title='ethcore_util::hash::Address'>Address</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='type' href='../../../../ethcore_util/crypto/type.Secret.html' title='ethcore_util::crypto::Secret'>Secret</a>, <a class='enum' href='../../../../ethcore_util/keys/store/enum.SigningError.html' title='ethcore_util::keys::store::SigningError'>SigningError</a>&gt;</code></h4>
+<h4 id='method.sign' class='method'><code>fn <a href='../../../../ethcore_util/keys/store/trait.AccountProvider.html#method.sign' class='fnname'>sign</a>(&amp;self, _account: &amp;<a class='struct' href='../../../../ethcore_util/hash/struct.Address.html' title='ethcore_util::hash::Address'>Address</a>, _message: &amp;<a class='struct' href='../../../../ethcore_util/hash/struct.H256.html' title='ethcore_util::hash::H256'>H256</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='type' href='../../../../ethcore_util/crypto/type.Signature.html' title='ethcore_util::crypto::Signature'>Signature</a>, <a class='enum' href='../../../../ethcore_util/keys/store/enum.SigningError.html' title='ethcore_util::keys::store::SigningError'>SigningError</a>&gt;</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "ethcore_rpc";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../../jquery.js"></script>
+    <script src="../../../../main.js"></script>
+    
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

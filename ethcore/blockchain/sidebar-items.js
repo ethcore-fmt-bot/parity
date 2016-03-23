@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["blockchain","Blockchain database."]],"struct":[["BlockChainConfig","Blockchain configuration."],["CacheSize","Represents blockchain's in-memory cache size in bytes."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PersonalClient","Account management (personal) rpc implementation."]]});

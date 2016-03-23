@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["TestMinerService","Test miner service."]]});

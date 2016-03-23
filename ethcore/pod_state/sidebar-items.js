@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PodState","State of all accounts in the system expressed in Plain Old Data."]]});

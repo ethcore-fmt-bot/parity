@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Executed","Transaction execution receipt."]]});

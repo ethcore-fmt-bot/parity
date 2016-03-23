@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TestBlockChainClient` struct in crate `ethcore`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TestBlockChainClient">
+
+    <title>ethcore::client::TestBlockChainClient - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>ethcore</a>::<wbr><a href='index.html'>client</a></p><script>window.sidebarCurrent = {name: 'TestBlockChainClient', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>ethcore</a>::<wbr><a href='index.html'>client</a>::<wbr><a class='struct' href=''>TestBlockChainClient</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-1183' class='srclink' href='../../src/ethcore/client/test_client.rs.html#36-57' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct TestBlockChainClient {
+    pub blocks: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;H256, Bytes&gt;&gt;,
+    pub numbers: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, H256&gt;&gt;,
+    pub genesis_hash: H256,
+    pub last_hash: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;H256&gt;,
+    pub difficulty: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;U256&gt;,
+    pub balances: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;Address, U256&gt;&gt;,
+    pub storage: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(Address, H256)</a>, H256&gt;&gt;,
+    pub code: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;Address, Bytes&gt;&gt;,
+    pub execution_result: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../ethcore/client/struct.Executed.html' title='ethcore::client::Executed'>Executed</a>&gt;&gt;,
+    pub receipts: <a class='struct' href='https://doc.rust-lang.org/nightly/std/sync/rwlock/struct.RwLock.html' title='std::sync::rwlock::RwLock'>RwLock</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html' title='std::collections::hash::map::HashMap'>HashMap</a>&lt;<a class='enum' href='../../ethcore/client/enum.TransactionId.html' title='ethcore::client::TransactionId'>TransactionId</a>, <a class='struct' href='../../ethcore/receipt/struct.LocalizedReceipt.html' title='ethcore::receipt::LocalizedReceipt'>LocalizedReceipt</a>&gt;&gt;,
+}</pre><div class='docblock'><p>Test client.</p>
+</div><h2 class='fields'>Fields</h2>
+<table><tr class='stab '>
+                                  <td id='structfield.blocks'><code>blocks</code></td><td><div class='docblock'><p>Blocks.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.numbers'><code>numbers</code></td><td><div class='docblock'><p>Mapping of numbers to hashes.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.genesis_hash'><code>genesis_hash</code></td><td><div class='docblock'><p>Genesis block hash.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.last_hash'><code>last_hash</code></td><td><div class='docblock'><p>Last block hash.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.difficulty'><code>difficulty</code></td><td><div class='docblock'><p>Difficulty.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.balances'><code>balances</code></td><td><div class='docblock'><p>Balances.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.storage'><code>storage</code></td><td><div class='docblock'><p>Storage.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.code'><code>code</code></td><td><div class='docblock'><p>Code.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.execution_result'><code>execution_result</code></td><td><div class='docblock'><p>Execution result.</p>
+</div></td></tr><tr class='stab '>
+                                  <td id='structfield.receipts'><code>receipts</code></td><td><div class='docblock'><p>Transaction receipts.</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../../ethcore/client/struct.TestBlockChainClient.html' title='ethcore::client::TestBlockChainClient'>TestBlockChainClient</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><code>fn <a href='#method.new' class='fnname'>new</a>() -&gt; Self</code></h4>
+<div class='docblock'><p>Creates new test client.</p>
+</div><h4 id='method.set_transaction_receipt' class='method'><code>fn <a href='#method.set_transaction_receipt' class='fnname'>set_transaction_receipt</a>(&amp;self, id: <a class='enum' href='../../ethcore/client/enum.TransactionId.html' title='ethcore::client::TransactionId'>TransactionId</a>, receipt: <a class='struct' href='../../ethcore/receipt/struct.LocalizedReceipt.html' title='ethcore::receipt::LocalizedReceipt'>LocalizedReceipt</a>)</code></h4>
+<div class='docblock'><p>Set the transaction receipt result</p>
+</div><h4 id='method.set_execution_result' class='method'><code>fn <a href='#method.set_execution_result' class='fnname'>set_execution_result</a>(&amp;self, result: <a class='struct' href='../../ethcore/client/struct.Executed.html' title='ethcore::client::Executed'>Executed</a>)</code></h4>
+<div class='docblock'><p>Set the execution result.</p>
+</div><h4 id='method.set_balance' class='method'><code>fn <a href='#method.set_balance' class='fnname'>set_balance</a>(&amp;self, address: Address, balance: U256)</code></h4>
+<div class='docblock'><p>Set the balance of account <code>address</code> to <code>balance</code>.</p>
+</div><h4 id='method.set_code' class='method'><code>fn <a href='#method.set_code' class='fnname'>set_code</a>(&amp;self, address: Address, code: Bytes)</code></h4>
+<div class='docblock'><p>Set <code>code</code> at <code>address</code>.</p>
+</div><h4 id='method.set_storage' class='method'><code>fn <a href='#method.set_storage' class='fnname'>set_storage</a>(&amp;self, address: Address, position: H256, value: H256)</code></h4>
+<div class='docblock'><p>Set storage <code>position</code> to <code>value</code> for account <code>address</code>.</p>
+</div><h4 id='method.add_blocks' class='method'><code>fn <a href='#method.add_blocks' class='fnname'>add_blocks</a>(&amp;self, count: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>, with: <a class='enum' href='../../ethcore/client/enum.EachBlockWith.html' title='ethcore::client::EachBlockWith'>EachBlockWith</a>)</code></h4>
+<div class='docblock'><p>Add blocks to test client.</p>
+</div><h4 id='method.corrupt_block' class='method'><code>fn <a href='#method.corrupt_block' class='fnname'>corrupt_block</a>(&amp;mut self, n: <a class='type' href='../../ethcore/header/type.BlockNumber.html' title='ethcore::header::BlockNumber'>BlockNumber</a>)</code></h4>
+<div class='docblock'><p>TODO:</p>
+</div><h4 id='method.block_hash_delta_minus' class='method'><code>fn <a href='#method.block_hash_delta_minus' class='fnname'>block_hash_delta_minus</a>(&amp;mut self, delta: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>) -&gt; H256</code></h4>
+<div class='docblock'><p>TODO:</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html' title='core::default::Default'>Default</a> for <a class='struct' href='../../ethcore/client/struct.TestBlockChainClient.html' title='ethcore::client::TestBlockChainClient'>TestBlockChainClient</a></code></h3><div class='impl-items'><h4 id='method.default' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#method.default' class='fnname'>default</a>() -&gt; Self</code></h4>
+</div><h3 class='impl'><code>impl <a class='trait' href='../../ethcore/client/trait.BlockChainClient.html' title='ethcore::client::BlockChainClient'>BlockChainClient</a> for <a class='struct' href='../../ethcore/client/struct.TestBlockChainClient.html' title='ethcore::client::TestBlockChainClient'>TestBlockChainClient</a></code></h3><div class='impl-items'><h4 id='method.call' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.call' class='fnname'>call</a>(&amp;self, _t: &amp;<a class='struct' href='../../ethcore/transaction/struct.SignedTransaction.html' title='ethcore::transaction::SignedTransaction'>SignedTransaction</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../ethcore/client/struct.Executed.html' title='ethcore::client::Executed'>Executed</a>, <a class='enum' href='../../ethcore/error/enum.Error.html' title='ethcore::error::Error'>Error</a>&gt;</code></h4>
+<h4 id='method.block_total_difficulty' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.block_total_difficulty' class='fnname'>block_total_difficulty</a>(&amp;self, _id: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;U256&gt;</code></h4>
+<h4 id='method.block_hash' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.block_hash' class='fnname'>block_hash</a>(&amp;self, _id: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;H256&gt;</code></h4>
+<h4 id='method.nonce' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.nonce' class='fnname'>nonce</a>(&amp;self, _address: &amp;Address) -&gt; U256</code></h4>
+<h4 id='method.code' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.code' class='fnname'>code</a>(&amp;self, address: &amp;Address) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;Bytes&gt;</code></h4>
+<h4 id='method.balance' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.balance' class='fnname'>balance</a>(&amp;self, address: &amp;Address) -&gt; U256</code></h4>
+<h4 id='method.storage_at' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.storage_at' class='fnname'>storage_at</a>(&amp;self, address: &amp;Address, position: &amp;H256) -&gt; H256</code></h4>
+<h4 id='method.transaction' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.transaction' class='fnname'>transaction</a>(&amp;self, _id: <a class='enum' href='../../ethcore/client/enum.TransactionId.html' title='ethcore::client::TransactionId'>TransactionId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../ethcore/transaction/struct.LocalizedTransaction.html' title='ethcore::transaction::LocalizedTransaction'>LocalizedTransaction</a>&gt;</code></h4>
+<h4 id='method.uncle' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.uncle' class='fnname'>uncle</a>(&amp;self, _id: <a class='struct' href='../../ethcore/client/struct.UncleId.html' title='ethcore::client::UncleId'>UncleId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../ethcore/header/struct.Header.html' title='ethcore::header::Header'>BlockHeader</a>&gt;</code></h4>
+<h4 id='method.transaction_receipt' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.transaction_receipt' class='fnname'>transaction_receipt</a>(&amp;self, id: <a class='enum' href='../../ethcore/client/enum.TransactionId.html' title='ethcore::client::TransactionId'>TransactionId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../../ethcore/receipt/struct.LocalizedReceipt.html' title='ethcore::receipt::LocalizedReceipt'>LocalizedReceipt</a>&gt;</code></h4>
+<h4 id='method.blocks_with_bloom' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.blocks_with_bloom' class='fnname'>blocks_with_bloom</a>(&amp;self, _bloom: &amp;H2048, _from_block: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>, _to_block: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='type' href='../../ethcore/header/type.BlockNumber.html' title='ethcore::header::BlockNumber'>BlockNumber</a>&gt;&gt;</code></h4>
+<h4 id='method.logs' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.logs' class='fnname'>logs</a>(&amp;self, _filter: <a class='struct' href='../../ethcore/filter/struct.Filter.html' title='ethcore::filter::Filter'>Filter</a>) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../ethcore/log_entry/struct.LocalizedLogEntry.html' title='ethcore::log_entry::LocalizedLogEntry'>LocalizedLogEntry</a>&gt;</code></h4>
+<h4 id='method.prepare_sealing' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.prepare_sealing' class='fnname'>prepare_sealing</a>(&amp;self, _author: Address, _gas_floor_target: U256, _extra_data: Bytes, _transactions: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='../../ethcore/transaction/struct.SignedTransaction.html' title='ethcore::transaction::SignedTransaction'>SignedTransaction</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(<a class='struct' href='../../ethcore/block/struct.ClosedBlock.html' title='ethcore::block::ClosedBlock'>ClosedBlock</a>, <a class='struct' href='https://doc.rust-lang.org/nightly/std/collections/hash/set/struct.HashSet.html' title='std::collections::hash::set::HashSet'>HashSet</a>&lt;H256&gt;)</a>&gt;</code></h4>
+<h4 id='method.try_seal' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.try_seal' class='fnname'>try_seal</a>(&amp;self, block: <a class='struct' href='../../ethcore/block/struct.ClosedBlock.html' title='ethcore::block::ClosedBlock'>ClosedBlock</a>, _seal: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;Bytes&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../../ethcore/block/struct.SealedBlock.html' title='ethcore::block::SealedBlock'>SealedBlock</a>, <a class='struct' href='../../ethcore/block/struct.ClosedBlock.html' title='ethcore::block::ClosedBlock'>ClosedBlock</a>&gt;</code></h4>
+<h4 id='method.block_header' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.block_header' class='fnname'>block_header</a>(&amp;self, id: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;Bytes&gt;</code></h4>
+<h4 id='method.block_body' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.block_body' class='fnname'>block_body</a>(&amp;self, id: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;Bytes&gt;</code></h4>
+<h4 id='method.block' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.block' class='fnname'>block</a>(&amp;self, id: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;Bytes&gt;</code></h4>
+<h4 id='method.block_status' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.block_status' class='fnname'>block_status</a>(&amp;self, id: <a class='enum' href='../../ethcore/client/enum.BlockId.html' title='ethcore::client::BlockId'>BlockId</a>) -&gt; <a class='enum' href='../../ethcore/client/enum.BlockStatus.html' title='ethcore::client::BlockStatus'>BlockStatus</a></code></h4>
+<h4 id='method.tree_route' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.tree_route' class='fnname'>tree_route</a>(&amp;self, from: &amp;H256, to: &amp;H256) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;TreeRoute&gt;</code></h4>
+<h4 id='method.state_data' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.state_data' class='fnname'>state_data</a>(&amp;self, hash: &amp;H256) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;Bytes&gt;</code></h4>
+<h4 id='method.block_receipts' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.block_receipts' class='fnname'>block_receipts</a>(&amp;self, hash: &amp;H256) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;Bytes&gt;</code></h4>
+<h4 id='method.import_block' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.import_block' class='fnname'>import_block</a>(&amp;self, b: Bytes) -&gt; <a class='type' href='../../ethcore/error/type.ImportResult.html' title='ethcore::error::ImportResult'>ImportResult</a></code></h4>
+<h4 id='method.queue_info' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.queue_info' class='fnname'>queue_info</a>(&amp;self) -&gt; <a class='struct' href='../../ethcore/block_queue/struct.BlockQueueInfo.html' title='ethcore::block_queue::BlockQueueInfo'>BlockQueueInfo</a></code></h4>
+<h4 id='method.clear_queue' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.clear_queue' class='fnname'>clear_queue</a>(&amp;self)</code></h4>
+<h4 id='method.chain_info' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.chain_info' class='fnname'>chain_info</a>(&amp;self) -&gt; <a class='struct' href='../../ethcore/client/struct.BlockChainInfo.html' title='ethcore::client::BlockChainInfo'>BlockChainInfo</a></code></h4>
+<h4 id='method.best_block_header' class='method'><code>fn <a href='../../ethcore/client/trait.BlockChainClient.html#method.best_block_header' class='fnname'>best_block_header</a>(&amp;self) -&gt; Bytes</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "ethcore";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Config","TestSyncProvider config."],["TestSyncProvider","Test sync provider."]]});
