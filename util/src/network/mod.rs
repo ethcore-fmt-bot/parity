@@ -14,8 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Parity.  If not, see <http://www.gnu.org/licenses/>.
 
-//! Network and general IO module. 
-//! 
+//! Network and general IO module.
+//!
 //! Example usage for craeting a network service and adding an IO handler:
 //!
 //! ```rust
@@ -30,29 +30,29 @@
 //! }
 //!
 //! impl NetworkProtocolHandler<MyMessage> for MyHandler {
-//!		fn initialize(&self, io: &NetworkContext<MyMessage>) {
-//!			io.register_timer(0, 1000);
-//!		}
+//! 		fn initialize(&self, io: &NetworkContext<MyMessage>) {
+//! 			io.register_timer(0, 1000);
+//! 		}
 //!
-//!		fn read(&self, io: &NetworkContext<MyMessage>, peer: &PeerId, packet_id: u8, data: &[u8]) {
-//!			println!("Received {} ({} bytes) from {}", packet_id, data.len(), peer);
-//!		}
+//! 		fn read(&self, io: &NetworkContext<MyMessage>, peer: &PeerId, packet_id: u8, data: &[u8]) {
+//! 			println!("Received {} ({} bytes) from {}", packet_id, data.len(), peer);
+//! 		}
 //!
-//!		fn connected(&self, io: &NetworkContext<MyMessage>, peer: &PeerId) {
-//!			println!("Connected {}", peer);
-//!		}
+//! 		fn connected(&self, io: &NetworkContext<MyMessage>, peer: &PeerId) {
+//! 			println!("Connected {}", peer);
+//! 		}
 //!
-//!		fn disconnected(&self, io: &NetworkContext<MyMessage>, peer: &PeerId) {
-//!			println!("Disconnected {}", peer);
-//!		}
+//! 		fn disconnected(&self, io: &NetworkContext<MyMessage>, peer: &PeerId) {
+//! 			println!("Disconnected {}", peer);
+//! 		}
 //!
-//!		fn timeout(&self, io: &NetworkContext<MyMessage>, timer: TimerToken) {
-//!			println!("Timeout {}", timer);
-//!		}
+//! 		fn timeout(&self, io: &NetworkContext<MyMessage>, timer: TimerToken) {
+//! 			println!("Timeout {}", timer);
+//! 		}
 //!
-//!		fn message(&self, io: &NetworkContext<MyMessage>, message: &MyMessage) {
-//!			println!("Message {}", message.data);
-//!		}
+//! 		fn message(&self, io: &NetworkContext<MyMessage>, message: &MyMessage) {
+//! 			println!("Message {}", message.data);
+//! 		}
 //! }
 //!
 //! fn main () {
@@ -96,7 +96,9 @@ const PROTOCOL_VERSION: u32 = 4;
 /// Network IO protocol handler. This needs to be implemented for each new subprotocol.
 /// All the handler function are called from within IO event loop.
 /// `Message` is the type for message data.
-pub trait NetworkProtocolHandler<Message>: Sync + Send where Message: Send + Sync + Clone {
+pub trait NetworkProtocolHandler<Message>: Sync + Send
+	where Message: Send + Sync + Clone,
+{
 	/// Initialize the handler
 	fn initialize(&self, _io: &NetworkContext<Message>) {}
 	/// Called when new network packet received.
@@ -110,4 +112,3 @@ pub trait NetworkProtocolHandler<Message>: Sync + Send where Message: Send + Syn
 	/// Called when a broadcasted message is received. The message can only be sent from a different IO handler.
 	fn message(&self, _io: &NetworkContext<Message>, _message: &Message) {}
 }
-
